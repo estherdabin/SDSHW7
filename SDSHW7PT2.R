@@ -37,7 +37,7 @@ confounder_CI <- function(var) {
   diff <- mean(t1) - mean(t0)
   se <- sqrt(var(t1)/length(t1) + var(t0)/length(t0))
   ci <- c(diff - 1.96 * se, diff + 1.96 * se)
-  cat(var, "→ Difference:", round(diff, 3), " 95% CI:", round(ci, 3), "\n")
+  cat(var, " Difference:", round(diff, 3), " 95% CI:", round(ci, 3), "\n")
 }
 
 cat("\n Confidence Intervals for Confounder Differences:\n")
@@ -65,7 +65,7 @@ confounder_CI_matched <- function(var) {
   diff <- mean(t1) - mean(t0)
   se <- sqrt(var(t1)/length(t1) + var(t0)/length(t0))
   ci <- c(diff - 1.96 * se, diff + 1.96 * se)
-  cat(var, "→ Matched Difference:", round(diff, 3), " 95% CI:", round(ci, 3), "\n")
+  cat(var, "Matched Difference:", round(diff, 3), " 95% CI:", round(ci, 3), "\n")
 }
 
 p1_matched <- mean(matched_data$voted1998[matched_data$GOTV_call == 1])
